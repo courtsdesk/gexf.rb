@@ -4,11 +4,9 @@ GEXF::GRAPH_TYPES = (GEXF::Attribute::TYPES   +
                      GEXF::Graph::MODES).uniq
 
 class Hash
-  def symbolize_keys
-    hash = {}
-    each { |k,v| hash[k.to_sym] = delete(k) }
-    merge(hash)
-  end
+
+  # NOTE: Custom symbolize Keys method removed from originial gem as no
+  #       longer needed and it was causing issues in view helpers
 
   def symbolize_graph_types
     hash = {}
